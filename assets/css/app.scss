@@ -1,6 +1,10 @@
 /* This file is for your main application css. */
 @import "./phoenix.css";
 
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
+}
+
 /* Alerts and form errors */
 .alert {
   padding: 15px;
