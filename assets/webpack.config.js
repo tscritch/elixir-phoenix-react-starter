@@ -19,7 +19,6 @@ module.exports = (env, options) => {
       path: path.resolve(__dirname, "../priv/static/js"),
       publicPath: "/js/",
     },
-    devtool: devMode ? "eval-cheap-module-source-map" : undefined,
     module: {
       rules: [
         {
@@ -42,7 +41,9 @@ module.exports = (env, options) => {
     },
     plugins: [
       new MiniCssExtractPlugin({ filename: "../css/app.css" }),
-      new CopyWebpackPlugin([{ from: "static/", to: "../" }]),
+      new CopyWebpackPlugin({
+        patterns: [{ from: "static/", to: "../" }],
+      }),
     ],
   };
 };
